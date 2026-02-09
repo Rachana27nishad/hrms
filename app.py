@@ -12,10 +12,10 @@ CORS(app)
 
 def get_db():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        user=os.environ.get("DB_USER"),
-        password=os.environ.get("DB_PASSWORD"),
-        database=os.environ.get("DB_NAME")
+        host=os.environ.get("switchyard.proxy.rlwy.net"),
+        user=os.environ.get("root"),
+        password=os.environ.get("TBDUQDWYyDCUrHnPwMtKKBOhvzFdYMSi"),
+        database=os.environ.get("hrms")
     )
 
 @app.route("/")
