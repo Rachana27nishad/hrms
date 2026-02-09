@@ -15,7 +15,8 @@ def get_db():
         host=os.environ.get("switchyard.proxy.rlwy.net"),
         user=os.environ.get("root"),
         password=os.environ.get("TBDUQDWYyDCUrHnPwMtKKBOhvzFdYMSi"),
-        database=os.environ.get("hrms")
+        database=os.environ.get("hrms"),
+        port=(int(os.environ.get("46342")) if os.environ.get("46342") else 3306)
     )
 
 @app.route("/")
