@@ -3,18 +3,19 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import mysql.connector
 import re
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 # ---------- DATABASE CONNECTION ----------
+
 def get_db():
     return mysql.connector.connect(
-        host="switchyard.proxy.rlwy.net",
-        user="root",
-        password="TBDUQDWYyDCUrHnPwMtKKBOhvzFdYMSi",   # change if needed
-        database="hrms",
-         port=46342
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME")
     )
 
 @app.route("/")
